@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import MovieCard from './MovieCard';
+import MovieCard from './home/MovieCard';
 import { Box, styled } from '@mui/material';
 ////////////////////////////////////////////////
 const responsive = {

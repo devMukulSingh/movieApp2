@@ -24,7 +24,7 @@ function App() {
               <Route exact path = "/search" element = {<SearchResults/>} />
             </Routes>
         </BrowserRouter>
-          <Footer/>
+          {/* <Footer/> */}
 
     </>
   )

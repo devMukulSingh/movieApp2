@@ -1,9 +1,9 @@
 import { Box, Typography, styled } from '@mui/material'
 import React from 'react'
-import Img from './Img'
+import Img from '../Img'
 import { useSelector } from 'react-redux';
 import dayjs from "dayjs";
-import RatingComp from './RatingComp';
+import RatingComp from '../RatingComp';
 import { useNavigate } from "react-router-dom";
 ///////////////////////////////////////////////////
 

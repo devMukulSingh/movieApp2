@@ -2,21 +2,21 @@ import { Box, Button, Typography, styled } from '@mui/material';
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import Img from '../components/Img';
-import DetailsMovie from '../components/DetailsMovie';
-import DetailsCast from '../components/DetailsCast';
+import DetailsMovie from '../components/details/DetailsMovie';
+import DetailsCast from '../components/details/DetailsCast';
+import DetailsVideos from '../components/details/DetailsVideos';
 /////////////////////////////////////////////////////
 const BackdropImg = styled(Img)({
   opacity:'0.5 !important',
   width:'100vw',
   objectFit:'cover',
 })
-
 ///////////////////////////////////////////////////////
 
 const DetailsPage = () => {
 
   const { state : { movie , url} } = useLocation();
-  console.log(movie);
+  // console.log(movie);
   const backdropImg = url + 'original' + movie?.backdrop_path; 
 
   return (
@@ -35,6 +35,7 @@ const DetailsPage = () => {
 
         <DetailsMovie movie={movie} url={url}/>
         <DetailsCast url={url} />
+        <DetailsVideos/>
    
       </Box>
 

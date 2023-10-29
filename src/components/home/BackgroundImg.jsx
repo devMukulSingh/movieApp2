@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
-import useFetch from '../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { styled,Box, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import Img from './Img';
+import Img from '../Img';
 //////////////////////////////////////////////////
 
 const MainBox = styled(Box)({
@@ -11,7 +11,7 @@ const MainBox = styled(Box)({
 })
 const MovieImg = styled(Img)({
     height:'35rem',
-    width:'calc(100vw)',
+    width:'calc(100vw - 17px)',
     objectFit:'cover',
     objectPosition:'top'
 })

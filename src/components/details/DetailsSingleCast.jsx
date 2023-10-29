@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/material'
 import React from 'react'
-import Img from './Img';
+import Img from '../Img';
 
 const CastImg = styled(Img)({
     width:'10rem',

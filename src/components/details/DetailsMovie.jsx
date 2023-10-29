@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
-import RatingComp from '../components/RatingComp';
+import RatingComp from '../RatingComp';
 import { Box, Button, Typography, styled } from '@mui/material';
-import Img from '../components/Img';
+import Img from '../Img';
+import { useParams } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
+import DetailsVideoPlayer from './DetailsVideoPlayer';
 
 /////////////////////////////////////////////////////
 
@@ -16,7 +19,17 @@ const PosterImg = styled(Img)({
   
 const DetailsMovie = ( {url,movie }) => {
 
-  const posterImg = url + 'original' + movie?.poster_path;
+    const[ open,setOpen ] = useState(false);
+    const[ trailerId,setTrailerId] = useState(null);
+    const posterImg = url + 'original' + movie?.poster_path;
+    const { id,mediaType } = useParams();
+    const { data,loading } = useFetch(`/${mediaType}/${id}/videos`);
+
+    const handleTrailerPlay = () => {
+        const trailerData = data?.results?.filter(result => result.name.includes('Official Trailer'));
+        setTrailerId(trailerData[0]?.key);
+        setOpen(true);
+    }
 
   return (
 
@@ -37,7 +50,9 @@ const DetailsMovie = ( {url,movie }) => {
                         <Box sx={{ display:'flex'}}>
                         <Typography>User </Typography>&nbsp;
                         <Typography>Score</Typography>
-                        <Button>Play Trailer</Button>
+                        <Button onClick={ handleTrailerPlay }>Play Trailer</Button>
+                        { !loading && data && 
+                            <DetailsVideoPlayer open={open} setOpen={setOpen} id={trailerId}/>}
                     </Box>
                 </Box>
 

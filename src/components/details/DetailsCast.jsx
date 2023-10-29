@@ -1,26 +1,24 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { Box, Typography, styled } from '@mui/material';
-import { SingleCast } from './SingleCast';
+import { SingleCast } from './DetailsSingleCast';
 //////////////////////////////////////////////////
-const CastBox = styled(Box)({
-    display:'flex',
-    gap:10,
-    overflowX:'scroll !important',
-    position:'static'
-})
 const MainBox = styled(Box)({
     display:'flex',
     flexDirection:"column",
     gap:20,
-    overflowX:'scroll',
-    overflow:'auto'
+})
+const CastBox = styled(Box)({
+    display:'flex',
+    gap:10,
+    overflow:'auto',
+    width:'calc(100vw - 10rem)',
 })
 const DetailsCast = ( {url} ) => {
+
     const { mediaType, id } = useParams();
     const { data,loading } = useFetch(`/${mediaType}/${id}/credits`);
-    console.log(data);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { styled,Box, Typography, ButtonGroup, Button } from '@mui/material';
-import CarouselComp from './CarouselComp';
-import useFetch from '../hooks/useFetch';
+import CarouselComp from '../CarouselComp';
+import useFetch from '../../hooks/useFetch';
 
 ///////////////////////////////////////////////////////////////////
 const MainBox = styled(Box)({

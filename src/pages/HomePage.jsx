@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import BackgroundImg from '../components/BackgroundImg'
-import TrendingSection from '../components/TrendingSection';
-import PopularSection from '../components/PopularSection';
-import TopRatedSection from '../components/TopRatedSection';
+import BackgroundImg from '../components/home/BackgroundImg'
+import TrendingSection from '../components/home/TrendingSection';
+import PopularSection from '../components/home/PopularSection';
+import TopRatedSection from '../components/home/TopRatedSection';
 
 const HomePage = () => {
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { styled,Box, Typography, ButtonGroup, Button } from '@mui/material';
-import CarouselComp from './CarouselComp';
-import useFetch from '../hooks/useFetch';
+import CarouselComp from '../CarouselComp';
+import useFetch from '../../hooks/useFetch';
 
 ///////////////////////////////////////////////////////////////////
 const MainBox = styled(Box)({
@@ -16,11 +16,11 @@ const StyledBtn = styled(Button)({
 ///////////////////////////////////////////////////////////////////
 
 
-const PopularSection = () => { 
+const TopRatedSection = () => { 
 
   const[category,setCategory] = useState('movie');
 
-  const response = useFetch(`/${category}/popular`);
+  const response = useFetch(`/${category}/top_rated`);
 
 
   const toggleTimeBtn = (e) => {
@@ -36,9 +36,9 @@ const PopularSection = () => {
     <MainBox>
       <Box sx={{ display:'flex',justifyContent:'space-between',}}>
 
-        <Typography>Whats Popular</Typography>
+        <Typography>Trending</Typography>
         <ButtonGroup>
-          <StyledBtn onClick={ (e) => toggleTimeBtn(e) } >Movies</StyledBtn>
+          <StyledBtn onClick={ (e) => toggleTimeBtn(e) }>Movies</StyledBtn>
           <StyledBtn onClick={ (e) => toggleTimeBtn(e) } >TV Shows</StyledBtn>
         </ButtonGroup>
 
@@ -50,4 +50,4 @@ const PopularSection = () => {
   )
 }
 
-export default PopularSection
+export default TopRatedSection;
