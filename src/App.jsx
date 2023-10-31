@@ -7,6 +7,7 @@ import SearchResults from "./pages/SearchResults";
 import { getBaseUrl } from "./redux/homeSlice";
 import { useDispatch } from "react-redux";
 import useFetch from "./hooks/useFetch.js";
+import Explore from "./pages/Explore";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
               <Route exact path = "/" element = { <HomePage/> }/>
               <Route exact path = "/details/:mediaType/:id" element = { <DetailsPage/> } />
               <Route exact path = "/search" element = {<SearchResults/>} />
+              <Route exact path = "/explore/:mediaType" element = {<Explore/>} />
             </Routes>
         </BrowserRouter>
           {/* <Footer/> */}

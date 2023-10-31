@@ -18,8 +18,20 @@ const StyledButton = styled(Button)({
 const Header = () => {
     
     const navigate = useNavigate();
+
     const handleNavigate = () => {
         navigate("/");
+    }
+    const handleExploreBtn = (e) => {
+        const media = e.target.innerText;
+        let mediaType;
+        if(media==='Movies'){
+            mediaType='movie';
+        }
+        else{
+            mediaType='tv';
+        }
+        navigate(`/explore/${mediaType}`);
     }
 
   return (
@@ -35,8 +47,8 @@ const Header = () => {
                 </Box>
 
                 <Box >
-                    <StyledButton>Movies</StyledButton>
-                    <StyledButton>TV Shows</StyledButton>
+                    <StyledButton onClick={ (e) => handleExploreBtn(e) }>Movies</StyledButton>
+                    <StyledButton onClick={ (e) => handleExploreBtn(e) }>TV Shows</StyledButton>
                 </Box>
             </Toolbar>
         </AppBar>
