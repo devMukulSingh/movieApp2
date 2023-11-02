@@ -14,6 +14,7 @@ function App() {
   const dispatch = useDispatch();
   const { data  } = useFetch('/configuration');
   dispatch(getBaseUrl(data?.images?.base_url));
+  
 
   return (
     <>  
@@ -22,7 +23,7 @@ function App() {
             <Routes>
               <Route exact path = "/" element = { <HomePage/> }/>
               <Route exact path = "/details/:mediaType/:id" element = { <DetailsPage/> } />
-              <Route exact path = "/search" element = {<SearchResults/>} />
+              <Route exact path = "/search/:query" element = {<SearchResults/>} />
               <Route exact path = "/explore/:mediaType" element = {<Explore/>} />
             </Routes>
         </BrowserRouter>

@@ -6,11 +6,15 @@ const homeSlice = createSlice({
 
     initialState : {
         url :{},
+        genres : {},
     },
 
     reducers:{
         getBaseUrl : (state,action) => {
             state.url = action.payload;
+        },
+        getGenres : ( state,action) => {
+            state.genres = action.payload;
         }
     }
 })
